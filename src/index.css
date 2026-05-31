@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-space-void text-ink-primary font-body antialiased;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(167, 139, 250, 0.1), transparent),
+      radial-gradient(ellipse 70% 60% at 80% 70%, rgba(94, 234, 212, 0.06), transparent),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(253, 164, 175, 0.04), transparent);
+  }
+
+  ::selection {
+    background: rgba(167, 139, 250, 0.3);
+    color: #f0eeff;
+  }
+}
+
+@layer utilities {
+  .text-glow-violet { text-shadow: 0 0 20px rgba(167, 139, 250, 0.4); }
+  .text-glow-teal   { text-shadow: 0 0 20px rgba(94, 234, 212, 0.4); }
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(240, 238, 255, 0.08);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #fda4af 50%, #5eead4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
