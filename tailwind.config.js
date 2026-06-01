@@ -49,7 +49,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Syne', 'sans-serif'],            // headlines — distinctive, modern
+        display: ['Manrope', 'sans-serif'],            // headlines — distinctive, modern
         mono:    ['"DM Mono"', 'monospace'],        // labels, system text
         body:    ['Inter', 'sans-serif'],           // body — readable
       },
