@@ -162,6 +162,7 @@ export const aiFullstack: PortfolioContent = {
     {
       role: "Full-Stack Developer",
       company: "Neurodevelopmental Dynamics Lab · Northeastern University",
+      location: "Boston, MA",
       period: "Sep 2025 – Present",
       badge: "Current",
       bullets: [
@@ -175,6 +176,7 @@ export const aiFullstack: PortfolioContent = {
     {
       role: "Software Engineer",
       company: "Cisco Systems",
+      location: "Bengaluru, India",
       period: "Aug 2023 – Aug 2025",
       badge: "4× Award Winner",
       bullets: [
@@ -190,6 +192,7 @@ export const aiFullstack: PortfolioContent = {
     {
       role: "Technical Undergraduate Intern",
       company: "Cisco Systems",
+      location: "Bengaluru, India",
       period: "Feb 2023 – Jul 2023",
       bullets: [
         "Developed an RPA framework in UiPath to automate 1200+ regression test cases, cutting manual effort by 75%.",
@@ -200,6 +203,7 @@ export const aiFullstack: PortfolioContent = {
     {
       role: "AWS Cloud Intern",
       company: "F13 Technologies",
+      location: "Bengaluru, India",
       period: "Oct 2021 – Mar 2022",
       bullets: [
         "Earned 6 AWS certifications across architecture, security, and cloud deployment.",
@@ -210,6 +214,7 @@ export const aiFullstack: PortfolioContent = {
     {
       role: "Project Intern",
       company: "Tata Consultancy Services",
+      location: "Bengaluru, India",
       period: "Jun 2022 – Aug 2022",
       bullets: [
         "Built a scale model autonomous vehicle with computer vision and sensor integration.",

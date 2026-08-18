@@ -19,7 +19,7 @@ const accentLabel: Record<string, string> = {
 
 export default function Skills({ content }: Props) {
   return (
-    <section id="skills" className="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32">
+    <section id="skills" className="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 lg:-translate-x-12">
       <SectionHeader num="02" title="Tech matrix" />
 
       <div className="space-y-10">

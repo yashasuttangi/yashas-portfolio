@@ -9,7 +9,7 @@ export default function Experience({ content }: Props) {
   return (
     <section
       id="experience"
-      className="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32"
+      className="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 lg:-translate-x-12"
     >
       <SectionHeader num="03" title="Experience" />
 
@@ -27,6 +27,11 @@ export default function Experience({ content }: Props) {
               <p className="text-sm font-semibold text-violet-glow mt-2">
                 {exp.company}
               </p>
+              {exp.location && (
+                <p className="font-mono text-[11px] text-ink-muted tracking-wider mt-1">
+                  {exp.location}
+                </p>
+              )}
               {exp.badge && (
                 <span
                   className={`inline-flex items-center gap-1.5 mt-3 font-mono text-[10px] tracking-[0.1em] uppercase px-2.5 py-1 rounded-full border ${
