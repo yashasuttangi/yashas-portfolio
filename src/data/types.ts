@@ -19,10 +19,9 @@ export interface Skill {
 export interface LeadershipRole {
   title: string;
   description: string;
-  icon: 'briefcase' | 'rocket' | 'sparkle';
-  accent: 'violet' | 'teal' | 'coral';
+  icon: "briefcase" | "rocket" | "sparkle";
+  accent: "violet" | "teal" | "coral";
 }
-
 
 export interface Education {
   degree: string;
@@ -43,13 +42,45 @@ export interface Experience {
   badge?: string;
 }
 
+export type ProjectLinkType =
+  | "github"
+  | "demo"
+  | "video"
+  | "paper"
+  | "press"
+  | "playstore"
+  | "appstore"
+  | "website";
+
+export interface ProjectLink {
+  type: ProjectLinkType;
+  url: string;
+  label?: string; // optional override (e.g., "Featured in Star of Mysore")
+}
+
+export interface ProjectStackGroup {
+  category: string; // e.g., "Frontend", "AI / ML", "Smart Contracts"
+  items: string[];
+}
+
 export interface Project {
+  // Quick-scan fields (shown on card)
   title: string;
-  description: string;
-  tags: string[];
-  link?: string;
-  github?: string;
+  tagline: string; // 1-line description
+  category: string; // e.g., "Web3 · Hackathon", "AI · Healthcare"
+  techPreview: string[]; // 3-4 chips on card
   featured?: boolean;
+  links: ProjectLink[];
+
+  // Modal-only fields
+  fullDescription: string[]; // array of paragraphs
+  features?: string[]; // bullet list of key features
+  fullStack?: ProjectStackGroup[];
+  role?: string; // your role / contribution
+  context?: string; // "MIT Hackathon · 2024", "At Cisco", etc.
+  timeline?: string; // optional
+  image?: string; // optional screenshot path
+  press?: ProjectLink[]; // separate press / recognition links
 }
 
 export interface Highlight {

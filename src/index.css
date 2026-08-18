@@ -37,3 +37,48 @@
     color: transparent;
   }
 }
+
+@layer utilities {
+  /* ── Custom scrollbar — themed to portfolio ── */
+
+  /* WebKit browsers — Chrome, Brave, Safari, Edge */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(167, 139, 250, 0.25);
+    border-radius: 4px;
+    border: 1px solid rgba(167, 139, 250, 0.1);
+    transition: background 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(167, 139, 250, 0.45);
+    border-color: rgba(167, 139, 250, 0.3);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(167, 139, 250, 0.25) rgba(255, 255, 255, 0.02);
+  }
+
+  /* Hide scrollbar on Canvas elements (no need there) */
+  canvas {
+    scrollbar-width: none;
+  }
+  canvas::-webkit-scrollbar {
+    display: none;
+  }
+}

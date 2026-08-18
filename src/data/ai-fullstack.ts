@@ -220,36 +220,197 @@ export const aiFullstack: PortfolioContent = {
 
   // ── PROJECTS ──
   projects: [
+    // ── 1. BIT BOUNTY (headline featured) ──
     {
       title: "Bit Bounty",
-      description:
-        "Trustless, decentralized bug bounty protocol built at the MIT Bitcoin Hackathon. ETH payouts are triggered by on-chain cryptographic proof — no human review, no intermediary. Dual-tier system: deterministic bugs verified atomically via smart contract sandbox; logic bugs analyzed by an AI agent.",
-      tags: [
-        "Solidity",
-        "Foundry",
-        "React",
-        "FastAPI",
-        "Web3",
-        "MIT Hackathon",
+      tagline:
+        "Decentralized bug bounty platform with on-chain cryptographic verification.",
+      category: "Web3 · MIT Hackathon",
+      featured: true,
+      context: "MIT Hackathon · 2025",
+      techPreview: ["Solidity", "FastAPI", "Gemini", "EVM"],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/yashasuttangi/crypto-bounty",
+        },
       ],
+      fullDescription: [
+        "Bit Bounty is a decentralized bug bounty platform where ETH payouts are triggered by cryptographic proof — not human review. Developers deposit ETH against a target smart contract; security researchers (hunters) find bugs and claim rewards. Everything settles on-chain, with no intermediary or oracle.",
+        "The platform handles two distinct classes of vulnerabilities through a two-tier architecture. Tier 1 verifies deterministic bugs (reentrancy, integer overflow, broken access control) using on-chain invariant verification — the hunter submits exploit bytecode, the contract deploys and runs the exploit inside a self-call that always reverts (so no state is ever mutated), then decodes the result to check if a postcondition was violated. If so, the ETH transfers atomically in the same transaction.",
+        "Tier 2 handles logic bugs that don't trip a measurable invariant — a reward calculation silently truncating small stakers to zero, for example. A hunter submits the contract source, exploit description, and before/after storage snapshots through a frontend. A FastAPI agent analyzes the contract against its NatSpec documentation using Gemini, determines whether the observed behavior contradicts documented intent, and returns a verdict with severity and an auto-generated Foundry test.",
+      ],
+      features: [
+        "On-chain invariant verification for deterministic bugs — no oracle, no delay, no trust",
+        "Self-reverting exploit execution pattern — exploits run but never mutate state",
+        "AI-assisted logic bug analysis using Gemini + NatSpec documentation parsing",
+        "Auto-generated Foundry tests for verified vulnerabilities",
+        "Supports 7 standard invariants: SumNonDecreasing, OnlyOwnerCanChange, SlotsEqual, MaxValue, MustRemainZero, NonDecreasing, Immutable",
+        "End-to-end on-chain settlement — bounties paid out atomically with vulnerability proof",
+      ],
+      fullStack: [
+        {
+          category: "Smart Contracts",
+          items: ["Solidity", "Foundry", "EVM Bytecode", "CREATE opcode"],
+        },
+        { category: "Backend", items: ["FastAPI", "Python", "Gemini API"] },
+        { category: "Frontend", items: ["React", "ethers.js", "Web3 wallets"] },
+        {
+          category: "Concepts",
+          items: [
+            "Invariant verification",
+            "NatSpec parsing",
+            "RAG over contract source",
+          ],
+        },
+      ],
+      role: "Co-built end-to-end during a 36-hour MIT hackathon — designed the two-tier architecture, implemented invariant verification contracts, and built the AI analysis pipeline.",
     },
+
+    // ── 2. SJCE PLACEMENT & ALUMNI PORTAL ──
     {
-      title: "Placement & Alumni Portal",
-      description:
-        "Full-stack platform streamlining recruitment processes and fostering alumni interaction. 3,000+ users onboarded and active. Lorem ipsum filler text.",
-      tags: ["React", "Node.js", "MongoDB", "3k+ users"],
+      title: "SJCE Placement & Alumni Portal",
+      tagline:
+        "Campus placement and alumni network platform — live and featured in regional press.",
+      category: "Full-Stack · Production",
+      featured: true,
+      context: "At JSSSTU · 2022 – 2023",
+      techPreview: ["React", "Node.js", "MongoDB", "AWS"],
+      links: [{ type: "website", url: "https://sjceplacements.org/" }],
+      press: [
+        {
+          type: "press",
+          url: "https://starofmysore.com/young-alumni-meet-to-commemorate-sjces-diamond-jubilee-year-celebration/",
+          label: "Star of Mysore — Diamond Jubilee Feature",
+        },
+      ],
+      fullDescription: [
+        "Built as part of my role as Placement Secretary at JSSSTU, this portal serves as the central platform for campus placements and alumni engagement. It's currently live at sjceplacements.org and has been used across multiple recruitment cycles.",
+        "The system supports placement workflows — companies posting jobs, students applying, the placement office coordinating drives — alongside alumni features for networking, profile browsing, and event coordination. The project was featured in Star of Mysore during the college's Diamond Jubilee celebrations, highlighting the alumni meet that the platform helped organize.",
+        "// PLACEHOLDER: add more detail on specific features, scale of usage, or any technical challenges worth highlighting (e.g., handling concurrent applications during placement drives).",
+      ],
+      features: [
+        "Student, alumni, and admin role-based access",
+        "Job posting and application management for recruiters",
+        "Alumni profile and networking features",
+        "Event management for placement drives and alumni meets",
+        "// PLACEHOLDER: add more specific features you implemented",
+      ],
+      fullStack: [
+        { category: "Frontend", items: ["React", "Tailwind CSS", "Vite"] },
+        { category: "Backend", items: ["Node.js", "Express", "MongoDB"] },
+        { category: "Hosting", items: ["AWS EC2", "AWS S3"] },
+        // PLACEHOLDER — confirm the actual stack used
+      ],
+      role: "Led development as Placement Secretary — built end-to-end with student team contributors. // PLACEHOLDER: confirm exact role",
     },
+
+    // ── 3. CANCER CLASSIFICATION MLOPS ──
     {
-      title: "Medicine Prescription OCR",
-      description:
-        "OCR + NLP pipeline extracting structured data from handwritten medical prescriptions. Reducing manual entry errors. Placeholder description.",
-      tags: ["Python", "OpenCV", "NLTK", "NLP"],
+      title: "Cancer Classification — MLOps Pipeline",
+      tagline:
+        "End-to-end ML pipeline for medical image classification with MLflow tracking and DVC versioning.",
+      category: "ML · MLOps",
+      context: "Personal Project · 2024",
+      techPreview: ["TensorFlow", "MLflow", "DVC", "Python"],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/yashasuttangi/Cancer-classification-end-to-end-using-MLFlow-and-DVC",
+        },
+      ],
+      fullDescription: [
+        "An end-to-end machine learning project demonstrating production MLOps practices for a cancer cell classification task. The focus wasn't just the model — it was the *workflow* around the model: reproducible training, experiment tracking, data versioning, and pipeline orchestration.",
+        "Used MLflow to track experiments, hyperparameters, and model artifacts across runs — making it possible to compare model versions and roll back if needed. Used DVC (Data Version Control) to version both the dataset and intermediate pipeline stages, ensuring that any team member could reproduce a specific model from a specific data snapshot.",
+        "// PLACEHOLDER: add detail on the dataset (size, source if shareable), model architecture (CNN? transfer learning?), and any results / accuracy metrics you got.",
+      ],
+      features: [
+        "Modular pipeline stages: data ingestion → validation → preprocessing → training → evaluation",
+        "MLflow experiment tracking with parameter logging, metric tracking, and model registry",
+        "DVC data versioning with remote storage for reproducible training",
+        "Configurable hyperparameters via YAML — no code changes needed for experiments",
+        "// PLACEHOLDER: any standout feature like CI/CD integration or deployment",
+      ],
+      fullStack: [
+        {
+          category: "ML / Framework",
+          items: ["TensorFlow", "Keras", "NumPy", "Pandas"],
+        },
+        { category: "MLOps", items: ["MLflow", "DVC", "YAML configs"] },
+        { category: "Tooling", items: ["Python", "Jupyter", "Git"] },
+      ],
+      role: "Solo project — designed the pipeline architecture and implemented all stages from scratch.",
     },
+
+    // ── 4. AIKYAMIND ──
     {
-      title: "AikyaMind Mental Health App",
-      description:
-        "Mobile application providing self-diagnosis tools, counselling resources, and mental health support — privacy-first design.",
-      tags: ["React Native", "ML", "Firebase"],
+      title: "AikyaMind",
+      tagline:
+        "Mental health and mindfulness mobile app — published on Google Play.",
+      category: "Mobile · Mental Health",
+      context: "Personal Project",
+      techPreview: ["Flutter", "Dart", "Firebase"],
+      links: [
+        {
+          type: "playstore",
+          url: "https://play.google.com/store/apps/details?id=com.aikyamind.aikyamind&hl=en&pli=1",
+        },
+      ],
+      fullDescription: [
+        'AikyaMind ("aikya" meaning unity or oneness in Sanskrit) is a mental health and mindfulness app I built and published to the Google Play Store. The name reflects the core idea — that mental wellness comes from a sense of unity between mind and body.',
+        "Built with Flutter for cross-platform support, the app delivers mental health resources, mindfulness exercises, and tools to support emotional well-being. // PLACEHOLDER: confirm or refine the description of what the app actually does — meditation timer? mood tracking? journaling? resource library?",
+        "// PLACEHOLDER: any standout technical challenge or design decision worth highlighting?",
+      ],
+      features: [
+        "// PLACEHOLDER: list 3-5 specific features the app has",
+        "Cross-platform mobile experience built with Flutter",
+        "Published live on Google Play Store",
+      ],
+      fullStack: [
+        { category: "Mobile", items: ["Flutter", "Dart"] },
+        {
+          category: "Backend",
+          items: ["Firebase", "// PLACEHOLDER — confirm"],
+        },
+        { category: "Platforms", items: ["Android", "iOS"] },
+      ],
+      role: "Solo developer — designed, built, and published the app end-to-end.",
+    },
+
+    // ── 5. CAMPUS EVENT MANAGEMENT (DBMS) ──
+    {
+      title: "Campus Event Management System",
+      tagline:
+        "Role-based event and club management platform built for a DBMS coursework project.",
+      category: "Full-Stack · Coursework",
+      context: "Coursework · Northeastern",
+      techPreview: ["React", "Express", "MySQL", "JWT"],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/yashasuttangi/campus_event_management",
+        },
+      ],
+      fullDescription: [
+        "A full-stack web application built for a Database Management Systems coursework project — designed to manage campus events, clubs, and members with role-based access controls.",
+        "While the project scope was set by coursework, I took the opportunity to build it as a production-style application: separated frontend and backend services, JWT authentication, normalized relational schema, and modular API design. The result is a cleanly-architected reference implementation of CRUD-heavy multi-role systems.",
+      ],
+      features: [
+        "Three user roles: Student, Club Lead, Admin — each with distinct dashboards",
+        "JWT-based authentication and protected API routes",
+        "Event creation, registration, and notification flows",
+        "Club management with members and lead designation",
+        "Normalized MySQL schema with sample seed data",
+      ],
+      fullStack: [
+        {
+          category: "Frontend",
+          items: ["React", "Vite", "Tailwind CSS", "Context API"],
+        },
+        { category: "Backend", items: ["Node.js", "Express", "JWT"] },
+        { category: "Database", items: ["MySQL"] },
+      ],
+      role: "Solo developer — full-stack implementation from schema design to UI.",
     },
   ],
 
