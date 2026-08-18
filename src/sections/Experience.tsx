@@ -21,14 +21,14 @@ export default function Experience({ content }: Props) {
           >
             {/* Left — meta */}
             <div>
-              <p className="font-mono text-[11px] text-ink-muted tracking-wider leading-relaxed">
+              <p className="font-mono text-[12px] text-ink-muted tracking-wider leading-relaxed">
                 {exp.period}
               </p>
-              <p className="text-sm font-semibold text-violet-glow mt-2">
+              <p className="text-md font-semibold text-violet-glow mt-2">
                 {exp.company}
               </p>
               {exp.location && (
-                <p className="font-mono text-[11px] text-ink-muted tracking-wider mt-1">
+                <p className="font-mono text-[14px] text-ink-muted tracking-wider mt-1">
                   {exp.location}
                 </p>
               )}
@@ -59,7 +59,7 @@ export default function Experience({ content }: Props) {
                     key={j}
                     className="relative pl-5 text-sm text-ink-secondary leading-relaxed"
                   >
-                    <span className="absolute left-0 text-violet-glow">—</span>
+                    <span className="absolute left-1 text-violet-glow">▸</span>
                     {bullet}
                   </li>
                 ))}
