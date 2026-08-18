@@ -30,7 +30,6 @@ export function useScrollTracker(sectionIds: string[]) {
 
         const rect = el.getBoundingClientRect();
         const top = rect.top + window.scrollY;
-        const bottom = top + rect.height;
         const center = top + rect.height / 2;
 
         // distance from viewport center to section center

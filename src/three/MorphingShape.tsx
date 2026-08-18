@@ -264,7 +264,6 @@ function MorphingParticles({ onShapeName }: { onShapeName: (name: string, color:
     const { section, sectionProgress } = useScrollProgress.getState();
 
     const shapeIdx = clamp(section - 1, 0, SHAPES.length - 1);
-    const nextShapeIdx = clamp(shapeIdx + 1, 0, SHAPES.length - 1);
 
     // ⭐ TIMING FIX: shape locks in much earlier (first 25% of section)
     // 0 to 0.25 → smooth transition into the section's shape
