@@ -31,9 +31,9 @@ export const aiFullstack: PortfolioContent = {
       description: "Graduating May 2027 · Boston",
     },
     {
-      label: "At Cisco",
-      value: "4× IT Challenge Coins",
-      description: "Software Engineer · 2 years",
+      label: "Incoming",
+      value: "Nokia · AI R&D",
+      description: "AI R&D Engineer Co-op · Sunnyvale",
     },
     {
       label: "Focus",
@@ -159,6 +159,16 @@ export const aiFullstack: PortfolioContent = {
 
   // ── EXPERIENCE ──
   experiences: [
+    {
+      role: "AI R&D Engineer Co-op",
+      company: "Nokia",
+      location: "Sunnyvale, CA",
+      period: "Sep 2026 – Dec 2026",
+      badge: "Upcoming",
+      bullets: [
+        "Incoming AI R&D Engineer Co-op at Nokia's Sunnyvale campus — details to be added as the role begins.",
+      ],
+    },
     {
       role: "Full-Stack Developer",
       company: "Neurodevelopmental Dynamics Lab · Northeastern University",
