@@ -339,11 +339,11 @@ export default function MorphingShape() {
 
   return (
     <div
-      className={`fixed top-1/2 -translate-y-1/2 z-20 hidden lg:block transition-opacity duration-700 pointer-events-none ${visible ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed top-1/2 -translate-y-1/2 z-0 hidden lg:block transition-opacity duration-700 pointer-events-none ${visible ? 'opacity-100' : 'opacity-0'}`}
       style={{
-        left: '40px',
-        width: '220px',
-        height: '260px',
+        right: '-70px',
+        width: '260px',
+        height: '300px',
       }}
     >
       <div className="w-full h-full relative">
